@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Secret Santa 2017</title>
+</head>
+<body>
+	<div id="formWho">
+		<form action="ss17.html" method="get">
+		  I am:
+		  <select id="who" name="who" onchange="this.form.submit()">
+			<option value=""></option>
+			<option value="cg">Pang</option>
+			<option value="te">Terence</option>
+			<option value="pn">Paran</option>
+			<option value="je">Joelle</option>
+		  </select>
+		</form>
+	</div>
+	<script>
+	var url = new URL(document.URL); //window.location.href
+	var who = url.searchParams.get("who");
+	var santa = "";
+	if (who == 'cg') {
+		santa = "Hey Pang, shh... you are Paran's Secret Santa!";
+		document.write(santa);
+		document.getElementById("formWho").style.display = "none";
+	} else if (who == 'te') {
+		santa = "Hey Terence, shh... you are Joelle's Secret Santa!";
+		document.write(santa);
+		document.getElementById("formWho").style.display = "none";
+	} else if (who == 'pn') {
+		santa = "Hey Paran, shh... you are Terence's Secret Santa!";
+		document.write(santa);
+		document.getElementById("formWho").style.display = "none";
+	} else if (who == 'je') {
+		santa = "Hey Joelle, shh... you are Pang's Secret Santa!";
+		document.write(santa);
+		document.getElementById("formWho").style.display = "none";
+	} else {
+	}
+	</script>
+
+</body>
+</html>
